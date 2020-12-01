@@ -81,6 +81,56 @@ Partial Class Connection
         Me.RadioButtonDaily = New System.Windows.Forms.RadioButton()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.ButtonEditDevSet = New System.Windows.Forms.Button()
+        Me.ButtonSaveDevSettings = New System.Windows.Forms.Button()
+        Me.Label79 = New System.Windows.Forms.Label()
+        Me.Label78 = New System.Windows.Forms.Label()
+        Me.Label77 = New System.Windows.Forms.Label()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.Label74 = New System.Windows.Forms.Label()
+        Me.Label73 = New System.Windows.Forms.Label()
+        Me.Label72 = New System.Windows.Forms.Label()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.DateTimePickerPTUVU = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker4PTUDI = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxDEVPTU = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker2ACCRVU = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker1ACCRDI = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxDevAccr = New System.Windows.Forms.TextBox()
+        Me.TextBoxDevTIN = New System.Windows.Forms.TextBox()
+        Me.TextBoxDevAdd = New System.Windows.Forms.TextBox()
+        Me.TextBoxDevname = New System.Windows.Forms.TextBox()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.ButtonEditAddSettings = New System.Windows.Forms.Button()
+        Me.ButtonGetExportPath = New System.Windows.Forms.Button()
+        Me.ButtonSaveAddSettings = New System.Windows.Forms.Button()
+        Me.TextBoxExportPath = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.TextBoxTerminalNo = New System.Windows.Forms.TextBox()
+        Me.RadioButtonYES = New System.Windows.Forms.RadioButton()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.RadioButtonNO = New System.Windows.Forms.RadioButton()
+        Me.TextBoxTax = New System.Windows.Forms.TextBox()
+        Me.TextBoxSINumber = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.GroupBox19 = New System.Windows.Forms.GroupBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.TextBoxSugarPackets = New System.Windows.Forms.TextBox()
+        Me.TextBoxWaffleBag = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.TextBoxBROWNIEPRICE = New System.Windows.Forms.TextBox()
+        Me.TextBoxBROWNIEID = New System.Windows.Forms.TextBox()
+        Me.TextBoxBATTERID = New System.Windows.Forms.TextBox()
         Me.TabControl2.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -97,11 +147,18 @@ Partial Class Connection
         Me.GroupBox1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TableLayoutPanel8.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        Me.GroupBox19.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.TabPage11)
+        Me.TabControl2.Controls.Add(Me.TabPage1)
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
@@ -768,6 +825,566 @@ Partial Class Connection
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.TableLayoutPanel8)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(1018, 485)
+        Me.TabPage1.TabIndex = 1
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel8
+        '
+        Me.TableLayoutPanel8.ColumnCount = 3
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel8.Controls.Add(Me.GroupBox11, 0, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.TableLayoutPanel9, 1, 0)
+        Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
+        Me.TableLayoutPanel8.RowCount = 1
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 482.0!))
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(1012, 479)
+        Me.TableLayoutPanel8.TabIndex = 297
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.ButtonEditDevSet)
+        Me.GroupBox11.Controls.Add(Me.ButtonSaveDevSettings)
+        Me.GroupBox11.Controls.Add(Me.Label79)
+        Me.GroupBox11.Controls.Add(Me.Label78)
+        Me.GroupBox11.Controls.Add(Me.Label77)
+        Me.GroupBox11.Controls.Add(Me.Label76)
+        Me.GroupBox11.Controls.Add(Me.Label75)
+        Me.GroupBox11.Controls.Add(Me.Label74)
+        Me.GroupBox11.Controls.Add(Me.Label73)
+        Me.GroupBox11.Controls.Add(Me.Label72)
+        Me.GroupBox11.Controls.Add(Me.Label71)
+        Me.GroupBox11.Controls.Add(Me.DateTimePickerPTUVU)
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker4PTUDI)
+        Me.GroupBox11.Controls.Add(Me.TextBoxDEVPTU)
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker2ACCRVU)
+        Me.GroupBox11.Controls.Add(Me.DateTimePicker1ACCRDI)
+        Me.GroupBox11.Controls.Add(Me.TextBoxDevAccr)
+        Me.GroupBox11.Controls.Add(Me.TextBoxDevTIN)
+        Me.GroupBox11.Controls.Add(Me.TextBoxDevAdd)
+        Me.GroupBox11.Controls.Add(Me.TextBoxDevname)
+        Me.GroupBox11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox11.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(331, 473)
+        Me.GroupBox11.TabIndex = 294
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Developer Information"
+        '
+        'ButtonEditDevSet
+        '
+        Me.ButtonEditDevSet.BackColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.ButtonEditDevSet.FlatAppearance.BorderSize = 0
+        Me.ButtonEditDevSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEditDevSet.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonEditDevSet.ForeColor = System.Drawing.Color.White
+        Me.ButtonEditDevSet.Location = New System.Drawing.Point(221, 401)
+        Me.ButtonEditDevSet.Name = "ButtonEditDevSet"
+        Me.ButtonEditDevSet.Size = New System.Drawing.Size(65, 23)
+        Me.ButtonEditDevSet.TabIndex = 273
+        Me.ButtonEditDevSet.Text = "Edit"
+        Me.ButtonEditDevSet.UseVisualStyleBackColor = False
+        '
+        'ButtonSaveDevSettings
+        '
+        Me.ButtonSaveDevSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ButtonSaveDevSettings.FlatAppearance.BorderSize = 0
+        Me.ButtonSaveDevSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonSaveDevSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonSaveDevSettings.ForeColor = System.Drawing.Color.White
+        Me.ButtonSaveDevSettings.Location = New System.Drawing.Point(41, 401)
+        Me.ButtonSaveDevSettings.Name = "ButtonSaveDevSettings"
+        Me.ButtonSaveDevSettings.Size = New System.Drawing.Size(174, 23)
+        Me.ButtonSaveDevSettings.TabIndex = 272
+        Me.ButtonSaveDevSettings.Text = "Save"
+        Me.ButtonSaveDevSettings.UseVisualStyleBackColor = False
+        '
+        'Label79
+        '
+        Me.Label79.AutoSize = True
+        Me.Label79.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label79.Location = New System.Drawing.Point(38, 356)
+        Me.Label79.Name = "Label79"
+        Me.Label79.Size = New System.Drawing.Size(64, 14)
+        Me.Label79.TabIndex = 271
+        Me.Label79.Text = "Valid Until:"
+        '
+        'Label78
+        '
+        Me.Label78.AutoSize = True
+        Me.Label78.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label78.Location = New System.Drawing.Point(38, 314)
+        Me.Label78.Name = "Label78"
+        Me.Label78.Size = New System.Drawing.Size(76, 14)
+        Me.Label78.TabIndex = 270
+        Me.Label78.Text = "Date Issued:"
+        '
+        'Label77
+        '
+        Me.Label77.AutoSize = True
+        Me.Label77.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label77.Location = New System.Drawing.Point(38, 272)
+        Me.Label77.Name = "Label77"
+        Me.Label77.Size = New System.Drawing.Size(57, 14)
+        Me.Label77.TabIndex = 269
+        Me.Label77.Text = "PTU No.:"
+        '
+        'Label76
+        '
+        Me.Label76.AutoSize = True
+        Me.Label76.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label76.Location = New System.Drawing.Point(38, 230)
+        Me.Label76.Name = "Label76"
+        Me.Label76.Size = New System.Drawing.Size(64, 14)
+        Me.Label76.TabIndex = 268
+        Me.Label76.Text = "Valid Until:"
+        '
+        'Label75
+        '
+        Me.Label75.AutoSize = True
+        Me.Label75.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label75.Location = New System.Drawing.Point(38, 188)
+        Me.Label75.Name = "Label75"
+        Me.Label75.Size = New System.Drawing.Size(76, 14)
+        Me.Label75.TabIndex = 267
+        Me.Label75.Text = "Date Issued:"
+        '
+        'Label74
+        '
+        Me.Label74.AutoSize = True
+        Me.Label74.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label74.Location = New System.Drawing.Point(38, 149)
+        Me.Label74.Name = "Label74"
+        Me.Label74.Size = New System.Drawing.Size(53, 14)
+        Me.Label74.TabIndex = 266
+        Me.Label74.Text = "ACCR #:"
+        '
+        'Label73
+        '
+        Me.Label73.AutoSize = True
+        Me.Label73.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label73.Location = New System.Drawing.Point(38, 107)
+        Me.Label73.Name = "Label73"
+        Me.Label73.Size = New System.Drawing.Size(76, 14)
+        Me.Label73.TabIndex = 265
+        Me.Label73.Text = "Vat Reg Tin:"
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label72.Location = New System.Drawing.Point(38, 65)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(54, 14)
+        Me.Label72.TabIndex = 264
+        Me.Label72.Text = "Address:"
+        '
+        'Label71
+        '
+        Me.Label71.AutoSize = True
+        Me.Label71.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label71.Location = New System.Drawing.Point(38, 23)
+        Me.Label71.Name = "Label71"
+        Me.Label71.Size = New System.Drawing.Size(96, 14)
+        Me.Label71.TabIndex = 263
+        Me.Label71.Text = "Company Name:"
+        '
+        'DateTimePickerPTUVU
+        '
+        Me.DateTimePickerPTUVU.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerPTUVU.Location = New System.Drawing.Point(41, 373)
+        Me.DateTimePickerPTUVU.Name = "DateTimePickerPTUVU"
+        Me.DateTimePickerPTUVU.Size = New System.Drawing.Size(245, 22)
+        Me.DateTimePickerPTUVU.TabIndex = 262
+        '
+        'DateTimePicker4PTUDI
+        '
+        Me.DateTimePicker4PTUDI.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker4PTUDI.Location = New System.Drawing.Point(41, 331)
+        Me.DateTimePicker4PTUDI.Name = "DateTimePicker4PTUDI"
+        Me.DateTimePicker4PTUDI.Size = New System.Drawing.Size(245, 22)
+        Me.DateTimePicker4PTUDI.TabIndex = 261
+        '
+        'TextBoxDEVPTU
+        '
+        Me.TextBoxDEVPTU.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxDEVPTU.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxDEVPTU.Location = New System.Drawing.Point(41, 289)
+        Me.TextBoxDEVPTU.Name = "TextBoxDEVPTU"
+        Me.TextBoxDEVPTU.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxDEVPTU.TabIndex = 260
+        '
+        'DateTimePicker2ACCRVU
+        '
+        Me.DateTimePicker2ACCRVU.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2ACCRVU.Location = New System.Drawing.Point(41, 247)
+        Me.DateTimePicker2ACCRVU.Name = "DateTimePicker2ACCRVU"
+        Me.DateTimePicker2ACCRVU.Size = New System.Drawing.Size(245, 22)
+        Me.DateTimePicker2ACCRVU.TabIndex = 259
+        '
+        'DateTimePicker1ACCRDI
+        '
+        Me.DateTimePicker1ACCRDI.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1ACCRDI.Location = New System.Drawing.Point(41, 205)
+        Me.DateTimePicker1ACCRDI.Name = "DateTimePicker1ACCRDI"
+        Me.DateTimePicker1ACCRDI.Size = New System.Drawing.Size(245, 22)
+        Me.DateTimePicker1ACCRDI.TabIndex = 258
+        '
+        'TextBoxDevAccr
+        '
+        Me.TextBoxDevAccr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxDevAccr.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxDevAccr.Location = New System.Drawing.Point(41, 163)
+        Me.TextBoxDevAccr.Name = "TextBoxDevAccr"
+        Me.TextBoxDevAccr.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxDevAccr.TabIndex = 257
+        '
+        'TextBoxDevTIN
+        '
+        Me.TextBoxDevTIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxDevTIN.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxDevTIN.Location = New System.Drawing.Point(41, 124)
+        Me.TextBoxDevTIN.Name = "TextBoxDevTIN"
+        Me.TextBoxDevTIN.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxDevTIN.TabIndex = 256
+        '
+        'TextBoxDevAdd
+        '
+        Me.TextBoxDevAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxDevAdd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxDevAdd.Location = New System.Drawing.Point(41, 82)
+        Me.TextBoxDevAdd.Name = "TextBoxDevAdd"
+        Me.TextBoxDevAdd.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxDevAdd.TabIndex = 255
+        '
+        'TextBoxDevname
+        '
+        Me.TextBoxDevname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxDevname.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxDevname.Location = New System.Drawing.Point(41, 40)
+        Me.TextBoxDevname.Name = "TextBoxDevname"
+        Me.TextBoxDevname.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxDevname.TabIndex = 254
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.ColumnCount = 1
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.GroupBox10, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.GroupBox19, 0, 1)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(340, 3)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.RowCount = 2
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(331, 473)
+        Me.TableLayoutPanel9.TabIndex = 295
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.ButtonEditAddSettings)
+        Me.GroupBox10.Controls.Add(Me.ButtonGetExportPath)
+        Me.GroupBox10.Controls.Add(Me.ButtonSaveAddSettings)
+        Me.GroupBox10.Controls.Add(Me.TextBoxExportPath)
+        Me.GroupBox10.Controls.Add(Me.Label17)
+        Me.GroupBox10.Controls.Add(Me.Label56)
+        Me.GroupBox10.Controls.Add(Me.TextBoxTerminalNo)
+        Me.GroupBox10.Controls.Add(Me.RadioButtonYES)
+        Me.GroupBox10.Controls.Add(Me.Label18)
+        Me.GroupBox10.Controls.Add(Me.Label20)
+        Me.GroupBox10.Controls.Add(Me.RadioButtonNO)
+        Me.GroupBox10.Controls.Add(Me.TextBoxTax)
+        Me.GroupBox10.Controls.Add(Me.TextBoxSINumber)
+        Me.GroupBox10.Controls.Add(Me.Label19)
+        Me.GroupBox10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox10.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(325, 230)
+        Me.GroupBox10.TabIndex = 293
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Additional Settings"
+        '
+        'ButtonEditAddSettings
+        '
+        Me.ButtonEditAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.ButtonEditAddSettings.FlatAppearance.BorderSize = 0
+        Me.ButtonEditAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEditAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonEditAddSettings.ForeColor = System.Drawing.Color.White
+        Me.ButtonEditAddSettings.Location = New System.Drawing.Point(218, 196)
+        Me.ButtonEditAddSettings.Name = "ButtonEditAddSettings"
+        Me.ButtonEditAddSettings.Size = New System.Drawing.Size(65, 23)
+        Me.ButtonEditAddSettings.TabIndex = 294
+        Me.ButtonEditAddSettings.Text = "Edit"
+        Me.ButtonEditAddSettings.UseVisualStyleBackColor = False
+        '
+        'ButtonGetExportPath
+        '
+        Me.ButtonGetExportPath.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ButtonGetExportPath.FlatAppearance.BorderSize = 0
+        Me.ButtonGetExportPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonGetExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonGetExportPath.ForeColor = System.Drawing.Color.White
+        Me.ButtonGetExportPath.Location = New System.Drawing.Point(238, 44)
+        Me.ButtonGetExportPath.Name = "ButtonGetExportPath"
+        Me.ButtonGetExportPath.Size = New System.Drawing.Size(45, 22)
+        Me.ButtonGetExportPath.TabIndex = 294
+        Me.ButtonGetExportPath.Text = "..."
+        Me.ButtonGetExportPath.UseVisualStyleBackColor = False
+        '
+        'ButtonSaveAddSettings
+        '
+        Me.ButtonSaveAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ButtonSaveAddSettings.FlatAppearance.BorderSize = 0
+        Me.ButtonSaveAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonSaveAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonSaveAddSettings.ForeColor = System.Drawing.Color.White
+        Me.ButtonSaveAddSettings.Location = New System.Drawing.Point(38, 196)
+        Me.ButtonSaveAddSettings.Name = "ButtonSaveAddSettings"
+        Me.ButtonSaveAddSettings.Size = New System.Drawing.Size(174, 23)
+        Me.ButtonSaveAddSettings.TabIndex = 293
+        Me.ButtonSaveAddSettings.Text = "Save"
+        Me.ButtonSaveAddSettings.UseVisualStyleBackColor = False
+        '
+        'TextBoxExportPath
+        '
+        Me.TextBoxExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxExportPath.Location = New System.Drawing.Point(38, 44)
+        Me.TextBoxExportPath.Name = "TextBoxExportPath"
+        Me.TextBoxExportPath.Size = New System.Drawing.Size(200, 22)
+        Me.TextBoxExportPath.TabIndex = 282
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(35, 152)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(76, 14)
+        Me.Label17.TabIndex = 292
+        Me.Label17.Text = "Terminal No."
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(194, 69)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(72, 14)
+        Me.Label56.TabIndex = 285
+        Me.Label56.Text = "Zero Rated:"
+        '
+        'TextBoxTerminalNo
+        '
+        Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 168)
+        Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
+        Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxTerminalNo.TabIndex = 291
+        '
+        'RadioButtonYES
+        '
+        Me.RadioButtonYES.AutoSize = True
+        Me.RadioButtonYES.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonYES.Location = New System.Drawing.Point(197, 87)
+        Me.RadioButtonYES.Name = "RadioButtonYES"
+        Me.RadioButtonYES.Size = New System.Drawing.Size(45, 18)
+        Me.RadioButtonYES.TabIndex = 287
+        Me.RadioButtonYES.TabStop = True
+        Me.RadioButtonYES.Text = "Yes"
+        Me.RadioButtonYES.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(35, 111)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(111, 14)
+        Me.Label18.TabIndex = 290
+        Me.Label18.Text = "SI Number Format:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(35, 27)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(76, 14)
+        Me.Label20.TabIndex = 283
+        Me.Label20.Text = "Export Path:"
+        '
+        'RadioButtonNO
+        '
+        Me.RadioButtonNO.AutoSize = True
+        Me.RadioButtonNO.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonNO.Location = New System.Drawing.Point(245, 87)
+        Me.RadioButtonNO.Name = "RadioButtonNO"
+        Me.RadioButtonNO.Size = New System.Drawing.Size(40, 18)
+        Me.RadioButtonNO.TabIndex = 288
+        Me.RadioButtonNO.TabStop = True
+        Me.RadioButtonNO.Text = "No"
+        Me.RadioButtonNO.UseVisualStyleBackColor = True
+        '
+        'TextBoxTax
+        '
+        Me.TextBoxTax.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTax.Location = New System.Drawing.Point(38, 86)
+        Me.TextBoxTax.Name = "TextBoxTax"
+        Me.TextBoxTax.Size = New System.Drawing.Size(153, 22)
+        Me.TextBoxTax.TabIndex = 284
+        '
+        'TextBoxSINumber
+        '
+        Me.TextBoxSINumber.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSINumber.Location = New System.Drawing.Point(38, 126)
+        Me.TextBoxSINumber.Name = "TextBoxSINumber"
+        Me.TextBoxSINumber.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxSINumber.TabIndex = 289
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(35, 69)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(31, 14)
+        Me.Label19.TabIndex = 286
+        Me.Label19.Text = "Tax:"
+        '
+        'GroupBox19
+        '
+        Me.GroupBox19.Controls.Add(Me.Label26)
+        Me.GroupBox19.Controls.Add(Me.Label27)
+        Me.GroupBox19.Controls.Add(Me.TextBoxSugarPackets)
+        Me.GroupBox19.Controls.Add(Me.TextBoxWaffleBag)
+        Me.GroupBox19.Controls.Add(Me.Label25)
+        Me.GroupBox19.Controls.Add(Me.Label24)
+        Me.GroupBox19.Controls.Add(Me.Label23)
+        Me.GroupBox19.Controls.Add(Me.TextBoxBROWNIEPRICE)
+        Me.GroupBox19.Controls.Add(Me.TextBoxBROWNIEID)
+        Me.GroupBox19.Controls.Add(Me.TextBoxBATTERID)
+        Me.GroupBox19.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox19.Location = New System.Drawing.Point(3, 239)
+        Me.GroupBox19.Name = "GroupBox19"
+        Me.GroupBox19.Size = New System.Drawing.Size(325, 231)
+        Me.GroupBox19.TabIndex = 294
+        Me.GroupBox19.TabStop = False
+        Me.GroupBox19.Text = "Default id references"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(158, 72)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(88, 14)
+        Me.Label26.TabIndex = 290
+        Me.Label26.Text = "Sugar Packets:"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(157, 28)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(70, 14)
+        Me.Label27.TabIndex = 289
+        Me.Label27.Text = "Waffle Bag:"
+        '
+        'TextBoxSugarPackets
+        '
+        Me.TextBoxSugarPackets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxSugarPackets.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSugarPackets.Location = New System.Drawing.Point(160, 87)
+        Me.TextBoxSugarPackets.Name = "TextBoxSugarPackets"
+        Me.TextBoxSugarPackets.ReadOnly = True
+        Me.TextBoxSugarPackets.Size = New System.Drawing.Size(118, 22)
+        Me.TextBoxSugarPackets.TabIndex = 288
+        '
+        'TextBoxWaffleBag
+        '
+        Me.TextBoxWaffleBag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxWaffleBag.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxWaffleBag.Location = New System.Drawing.Point(160, 45)
+        Me.TextBoxWaffleBag.Name = "TextBoxWaffleBag"
+        Me.TextBoxWaffleBag.ReadOnly = True
+        Me.TextBoxWaffleBag.Size = New System.Drawing.Size(118, 22)
+        Me.TextBoxWaffleBag.TabIndex = 287
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(33, 114)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(159, 14)
+        Me.Label25.TabIndex = 286
+        Me.Label25.Text = "Browmie Mix Upgrade Price:"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(33, 70)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(92, 14)
+        Me.Label24.TabIndex = 285
+        Me.Label24.Text = "Brownie Mix ID:"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(35, 28)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(106, 14)
+        Me.Label23.TabIndex = 284
+        Me.Label23.Text = "Famous Batter ID:"
+        '
+        'TextBoxBROWNIEPRICE
+        '
+        Me.TextBoxBROWNIEPRICE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBROWNIEPRICE.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBROWNIEPRICE.Location = New System.Drawing.Point(36, 131)
+        Me.TextBoxBROWNIEPRICE.Name = "TextBoxBROWNIEPRICE"
+        Me.TextBoxBROWNIEPRICE.ReadOnly = True
+        Me.TextBoxBROWNIEPRICE.Size = New System.Drawing.Size(118, 22)
+        Me.TextBoxBROWNIEPRICE.TabIndex = 257
+        '
+        'TextBoxBROWNIEID
+        '
+        Me.TextBoxBROWNIEID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBROWNIEID.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBROWNIEID.Location = New System.Drawing.Point(36, 87)
+        Me.TextBoxBROWNIEID.Name = "TextBoxBROWNIEID"
+        Me.TextBoxBROWNIEID.ReadOnly = True
+        Me.TextBoxBROWNIEID.Size = New System.Drawing.Size(118, 22)
+        Me.TextBoxBROWNIEID.TabIndex = 256
+        '
+        'TextBoxBATTERID
+        '
+        Me.TextBoxBATTERID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBATTERID.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxBATTERID.Location = New System.Drawing.Point(36, 45)
+        Me.TextBoxBATTERID.Name = "TextBoxBATTERID"
+        Me.TextBoxBATTERID.ReadOnly = True
+        Me.TextBoxBATTERID.Size = New System.Drawing.Size(118, 22)
+        Me.TextBoxBATTERID.TabIndex = 255
+        '
         'Connection
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -803,6 +1420,15 @@ Partial Class Connection
         Me.Panel6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TableLayoutPanel8.ResumeLayout(False)
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
+        Me.GroupBox19.ResumeLayout(False)
+        Me.GroupBox19.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -866,4 +1492,54 @@ Partial Class Connection
     Friend WithEvents Button9 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
+    Friend WithEvents GroupBox11 As GroupBox
+    Friend WithEvents ButtonEditDevSet As Button
+    Friend WithEvents ButtonSaveDevSettings As Button
+    Friend WithEvents Label79 As Label
+    Friend WithEvents Label78 As Label
+    Friend WithEvents Label77 As Label
+    Friend WithEvents Label76 As Label
+    Friend WithEvents Label75 As Label
+    Friend WithEvents Label74 As Label
+    Friend WithEvents Label73 As Label
+    Friend WithEvents Label72 As Label
+    Friend WithEvents Label71 As Label
+    Friend WithEvents DateTimePickerPTUVU As DateTimePicker
+    Friend WithEvents DateTimePicker4PTUDI As DateTimePicker
+    Friend WithEvents TextBoxDEVPTU As TextBox
+    Friend WithEvents DateTimePicker2ACCRVU As DateTimePicker
+    Friend WithEvents DateTimePicker1ACCRDI As DateTimePicker
+    Friend WithEvents TextBoxDevAccr As TextBox
+    Friend WithEvents TextBoxDevTIN As TextBox
+    Friend WithEvents TextBoxDevAdd As TextBox
+    Friend WithEvents TextBoxDevname As TextBox
+    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents GroupBox10 As GroupBox
+    Friend WithEvents ButtonEditAddSettings As Button
+    Friend WithEvents ButtonGetExportPath As Button
+    Friend WithEvents ButtonSaveAddSettings As Button
+    Friend WithEvents TextBoxExportPath As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label56 As Label
+    Friend WithEvents TextBoxTerminalNo As TextBox
+    Friend WithEvents RadioButtonYES As RadioButton
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents RadioButtonNO As RadioButton
+    Friend WithEvents TextBoxTax As TextBox
+    Friend WithEvents TextBoxSINumber As TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents GroupBox19 As GroupBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents TextBoxSugarPackets As TextBox
+    Friend WithEvents TextBoxWaffleBag As TextBox
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents TextBoxBROWNIEPRICE As TextBox
+    Friend WithEvents TextBoxBROWNIEID As TextBox
+    Friend WithEvents TextBoxBATTERID As TextBox
 End Class

@@ -10,12 +10,19 @@ Public Class Connection
     Dim IfLoadedCloudCon As Boolean = True
 
     Dim Autobackup As Boolean = False
+
+    Dim Sql As String = ""
     Private Sub Connection_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             TabControl2.TabPages(0).Text = "Connection Settings"
+            TabControl2.TabPages(1).Text = "Additional Settings"
             LoadConn()
             LoadCloudConn()
             LoadAutoBackup()
+            LoadAdditionalSettings()
+            LoadDefaultSettingsDev()
+            LoadDefaultSettingsAdd()
+
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -538,4 +545,306 @@ Public Class Connection
             MsgBox(ex.ToString)
         End Try
     End Sub
+    Private Sub DatePickerState(tf As Boolean)
+        Try
+            DateTimePicker1ACCRDI.Enabled = tf
+            DateTimePicker2ACCRVU.Enabled = tf
+            DateTimePicker4PTUDI.Enabled = tf
+            DateTimePickerPTUVU.Enabled = tf
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+#Region "Additional Settings"
+    Dim FillUp As Boolean = False
+    Dim ConfirmDevInfoSettings As Boolean = False
+    Private Sub ButtonSaveDevSettings_Click(sender As Object, e As EventArgs) Handles ButtonSaveDevSettings.Click
+        FillUp = False
+        SaveDevInfo()
+    End Sub
+    Private Sub SaveDevInfo()
+        Dim table = "loc_settings"
+        Dim where = "settings_id = 1"
+        If TextboxIsEmpty(GroupBox11) = True Then
+            If ValidLocalConnection = True Then
+                Dim fields = "Dev_Company_Name, Dev_Address, Dev_Tin, Dev_Accr_No, Dev_Accr_Date_Issued, Dev_Accr_Valid_Until, Dev_PTU_No, Dev_PTU_Date_Issued, Dev_PTU_Valid_Until"
+                Dim sql = "Select " & fields & " FROM " & table & " WHERE " & where
+                Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalConnection)
+                Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+                Dim dt As DataTable = New DataTable
+                da.Fill(dt)
+                If dt.Rows.Count > 0 Then
+                    Dim fields1 = "`Dev_Company_Name`= '" & Trim(TextBoxDevname.Text) & "',
+                `Dev_Address`= '" & Trim(TextBoxDevAdd.Text) & "',
+                `Dev_Tin`= '" & Trim(TextBoxDevTIN.Text) & "',
+                `Dev_Accr_No`= '" & Trim(TextBoxDevAccr.Text) & "' ,
+                `Dev_Accr_Date_Issued`= '" & Format(DateTimePicker1ACCRDI.Value, "yyy-MM-dd") & "',
+                `Dev_Accr_Valid_Until`= '" & Format(DateTimePicker2ACCRVU.Value, "yyyy-MM-dd") & "',
+                `Dev_PTU_No`= '" & Trim(TextBoxDEVPTU.Text) & "',
+                `Dev_PTU_Date_Issued`= '" & Format(DateTimePickerPTUVU.Value, "yyyy-MM-dd") & "',
+                `Dev_PTU_Valid_Until`= '" & Format(DateTimePicker4PTUDI.Value, "yyyy-MM-dd") & "'"
+                    sql = "UPDATE " & table & " SET " & fields1 & " WHERE " & where
+                    cmd = New MySqlCommand(sql, LocalConnection)
+                    cmd.ExecuteNonQuery()
+                    ConfirmDevInfoSettings = True
+                    If FillUp = True Then
+                    Else
+                        MsgBox("Saved!")
+                    End If
+
+                Else
+                    Dim fields2 = "(Dev_Company_Name, Dev_Address, Dev_Tin, Dev_Accr_No, Dev_Accr_Date_Issued, Dev_Accr_Valid_Until, Dev_PTU_No, Dev_PTU_Date_Issued, Dev_PTU_Valid_Until)"
+                    Dim value = "('" & Trim(TextBoxDevname.Text) & "'
+                ,'" & Trim(TextBoxDevAdd.Text) & "'
+                ,'" & Trim(TextBoxDevTIN.Text) & "'
+                ,'" & Trim(TextBoxDevAccr.Text) & "'
+                ,'" & Format(DateTimePicker1ACCRDI.Value, "yyyy-MM-dd") & "'
+                ,'" & Format(DateTimePicker2ACCRVU.Value, "yyyy-MM-dd") & "'
+                ,'" & Trim(TextBoxDEVPTU.Text) & "'
+                ,'" & Format(DateTimePickerPTUVU.Value, "yyyy-MM-dd") & "'
+                ,'" & Format(DateTimePicker4PTUDI.Value, "yyyy-MM-dd") & "')"
+                    sql = "INSERT INTO " & table & " " & fields2 & " VALUES " & value
+                    cmd = New MySqlCommand(sql, LocalConnection)
+                    cmd.ExecuteNonQuery()
+                    ConfirmDevInfoSettings = True
+                    If FillUp = True Then
+                    Else
+                        MsgBox("Saved!")
+                    End If
+
+                End If
+                TextboxEnableability(GroupBox11, False)
+                DatePickerState(False)
+            Else
+                MsgBox("Invalid local connection")
+                ConfirmDevInfoSettings = False
+            End If
+        Else
+            MsgBox("All fields are required")
+            ConfirmDevInfoSettings = False
+        End If
+    End Sub
+
+    Private Sub ButtonEditDevSet_Click(sender As Object, e As EventArgs) Handles ButtonEditDevSet.Click
+        TextboxEnableability(GroupBox11, True)
+        DatePickerState(True)
+        FillUp = False
+    End Sub
+
+    Private Sub ButtonGetExportPath_Click(sender As Object, e As EventArgs) Handles ButtonGetExportPath.Click
+        If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
+            TextBoxExportPath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+
+    Private Sub ButtonSaveAddSettings_Click(sender As Object, e As EventArgs) Handles ButtonSaveAddSettings.Click
+        FillUp = False
+        SaveAddSettings()
+    End Sub
+    Private Sub RDButtons(tf As Boolean)
+        Try
+            RadioButtonNO.Enabled = tf
+            RadioButtonYES.Enabled = tf
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub ButtonEditAddSettings_Click(sender As Object, e As EventArgs) Handles ButtonEditAddSettings.Click
+        TextboxEnableability(GroupBox10, True)
+        RDButtons(True)
+        ButtonGetExportPath.Enabled = True
+        FillUp = False
+    End Sub
+    Dim POSVersion As String = ""
+    Dim FooterInfo As String = ""
+    Dim ConfirmAdditionalSettings As Boolean = False
+    Private Sub SaveAddSettings()
+        Try
+            Dim RButton As Integer
+            Dim Tax = Val(TextBoxTax.Text) / 100
+            If TextboxIsEmpty(GroupBox10) = True Then
+                If ValidLocalConnection = True Then
+                    Dim table = "loc_settings"
+                    Dim fields = "A_Export_Path, A_Tax, A_SIFormat, A_Terminal_No, A_ZeroRated, S_Zreading, S_Batter, S_Brownie_Mix, S_Upgrade_Price_Add, S_Update_Version, S_Waffle_Bag , S_Packets , P_Footer_Info"
+                    Dim where = "settings_id = 1"
+                    Dim sql = "Select " & fields & " FROM " & table & " WHERE " & where
+                    Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalConnection())
+                    Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+                    Dim dt As DataTable = New DataTable
+                    da.Fill(dt)
+                    If dt.Rows.Count > 0 Then
+                        If RadioButtonYES.Checked = True Then
+                            RButton = 1
+                        ElseIf RadioButtonNO.Checked = True Then
+                            RButton = 0
+                        End If
+                        Dim fields1 = "A_Export_Path = '" & ConvertToBase64(Trim(TextBoxExportPath.Text)) & "', A_Tax = '" & Tax & "' , A_SIFormat = '" & Trim(TextBoxSINumber.Text) & "' , A_Terminal_No = '" & Trim(TextBoxTerminalNo.Text) & "' , A_ZeroRated = '" & RButton & "', S_Zreading = '" & Format(Now(), "yyyy-MM-dd") & "' , S_Batter = '" & Trim(TextBoxBATTERID.Text) & "', S_Brownie_Mix = '" & Trim(TextBoxBROWNIEID.Text) & "', S_Upgrade_Price_Add = '" & Trim(TextBoxBROWNIEPRICE.Text) & "' , `S_Waffle_Bag` = '" & Trim(TextBoxWaffleBag.Text) & "' , `S_Packets` = '" & Trim(TextBoxSugarPackets.Text) & "' , S_Update_Version = '" & POSVersion & "', P_Footer_Info = '" & FooterInfo & "'"
+                        sql = "UPDATE " & table & " SET " & fields1 & " WHERE " & where
+                        cmd = New MySqlCommand(sql, LocalConnection)
+                        cmd.ExecuteNonQuery()
+                        If FillUp = True Then
+                        Else
+                            MsgBox("Saved!")
+                        End If
+                    Else
+                        Dim fields2 = "(A_Export_Path, A_Tax, A_SIFormat, A_Terminal_No, A_ZeroRated, S_Zreading, S_Batter, S_Brownie_Mix, S_Upgrade_Price_Add , S_Update_Version , S_Waffle_Bag , S_Packets, P_Footer_Info)"
+                        Dim value = "('" & ConvertToBase64(Trim(TextBoxExportPath.Text)) & "'
+                     ,'" & Tax & "'
+                     ,'" & Trim(TextBoxSINumber.Text) & "'
+                     ,'" & Trim(TextBoxTerminalNo.Text) & "'
+                     ,'" & RButton & "'
+                     ,'" & Format(Now(), "yyyy-MM-dd") & "'
+                     ,'" & Trim(TextBoxBATTERID.Text) & "'
+                     ,'" & Trim(TextBoxBROWNIEID.Text) & "'
+                     ,'" & Trim(TextBoxBROWNIEPRICE.Text) & "'
+                     ,'" & POSVersion & "'
+                     ,'" & Trim(TextBoxWaffleBag.Text) & "'
+                     ,'" & Trim(TextBoxSugarPackets.Text) & "')
+                     ,'" & FooterInfo & "')"
+
+                        sql = "INSERT INTO " & table & " " & fields2 & " VALUES " & value
+                        cmd = New MySqlCommand(sql, LocalConnection)
+                        cmd.ExecuteNonQuery()
+                        If FillUp = True Then
+                        Else
+                            MsgBox("Saved!")
+                        End If
+                    End If
+                    ConfirmAdditionalSettings = True
+                    TextboxEnableability(GroupBox10, False)
+                    RDButtons(False)
+                    ButtonGetExportPath.Enabled = False
+                Else
+                    ConfirmAdditionalSettings = False
+                    MsgBox("Invalid Local Connection.")
+                End If
+            Else
+                ConfirmAdditionalSettings = False
+                MsgBox("All fields are required.")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub LoadDefaultSettingsDev()
+        Try
+            If ValidCloudConnection = True And ValidLocalConnection = True Then
+                Sql = "SELECT `Dev_Company_Name`, `Dev_Address`, `Dev_Tin`, `Dev_Accr_No`, `Dev_Accr_Date_Issued`, `Dev_Accr_Valid_Until`, `Dev_PTU_No`, `Dev_PTU_Date_Issued`, `Dev_PTU_Valid_Until` FROM admin_settings_org WHERE settings_id = 1"
+                Dim cmd As MySqlCommand = New MySqlCommand(Sql, CloudConnection)
+                Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+                Dim dt As DataTable = New DataTable
+                da.Fill(dt)
+                If dt.Rows.Count > 0 Then
+                    TextBoxDevname.Text = dt(0)(0)
+                    TextBoxDevAdd.Text = dt(0)(1)
+                    TextBoxDevTIN.Text = dt(0)(2)
+                    TextBoxDevAccr.Text = dt(0)(3)
+                    DateTimePicker1ACCRDI.Text = dt(0)(4)
+                    DateTimePicker2ACCRVU.Text = dt(0)(5)
+                    TextBoxDEVPTU.Text = dt(0)(6)
+                    DateTimePicker4PTUDI.Text = dt(0)(7)
+                    DateTimePickerPTUVU.Text = dt(0)(8)
+                    ConfirmDevInfoSettings = True
+                Else
+                    ConfirmDevInfoSettings = False
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub LoadAdditionalSettings()
+        Try
+            If ValidLocalConnection = True Then
+                Dim sql = "SELECT A_Export_Path, A_Tax, A_SIFormat, A_Terminal_No, A_ZeroRated FROM loc_settings WHERE settings_id = 1"
+                Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalConnection)
+                Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+                Dim dt As DataTable = New DataTable
+                da.Fill(dt)
+                For Each row As DataRow In dt.Rows
+                    If row("A_Export_Path") <> "" Then
+                        If row("A_Tax") <> "" Then
+                            If row("A_SIFormat") <> "" Then
+                                If row("A_Terminal_No") <> "" Then
+                                    If row("A_ZeroRated") <> "" Then
+                                        TextBoxExportPath.Text = ConvertB64ToString(row("A_Export_Path"))
+                                        TextBoxTax.Text = Val(row("A_Tax")) * 100
+                                        TextBoxSINumber.Text = row("A_SIFormat")
+                                        TextBoxTerminalNo.Text = row("A_Terminal_No")
+                                        If Val(row("A_ZeroRated")) = 0 Then
+                                            RadioButtonNO.Checked = True
+                                        ElseIf dt(0)(4) = 1 Then
+                                            RadioButtonYES.Checked = True
+                                        End If
+                                        ConfirmAdditionalSettings = True
+                                    Else
+                                        ConfirmAdditionalSettings = False
+                                        Exit For
+                                    End If
+                                Else
+                                    ConfirmAdditionalSettings = False
+                                    Exit For
+                                End If
+                            Else
+                                ConfirmAdditionalSettings = False
+                                Exit For
+                            End If
+                        Else
+                            ConfirmAdditionalSettings = False
+                            Exit For
+                        End If
+                    Else
+                        ConfirmAdditionalSettings = False
+                        Exit For
+                    End If
+                Next
+            Else
+                ConfirmAdditionalSettings = False
+            End If
+            My.Settings.Save()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub LoadDefaultSettingsAdd()
+        Try
+            If ValidCloudConnection = True And ValidLocalConnection = True Then
+                If System.IO.File.Exists(LocalConnectionPath) Then
+                    Dim EXPORTPATH = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\Innovention"
+                    Sql = "SELECT `A_Tax`, `A_SIFormat`, `A_Terminal_No`, `A_ZeroRated`, `S_Batter`, `S_Brownie_Mix`, `S_Upgrade_Price_Add` , `S_Update_Version` , `S_Waffle_Bag`, `S_Packets`, `P_Footer_Info` FROM admin_settings_org WHERE settings_id = 1"
+                    Dim cmd As MySqlCommand = New MySqlCommand(Sql, CloudConnection)
+                    Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
+                    Dim dt As DataTable = New DataTable
+                    da.Fill(dt)
+                    If dt.Rows.Count > 0 Then
+                        TextBoxExportPath.Text = EXPORTPATH
+                        TextBoxTax.Text = dt(0)(0)
+                        TextBoxSINumber.Text = dt(0)(1)
+                        TextBoxTerminalNo.Text = dt(0)(2)
+                        If dt(0)(3) = "0" Then
+                            RadioButtonNO.Checked = True
+                        ElseIf dt(0)(3) = "1" Then
+                            RadioButtonYES.Checked = False
+                        End If
+                        TextBoxBATTERID.Text = dt(0)(4)
+                        TextBoxBROWNIEID.Text = dt(0)(5)
+                        TextBoxBROWNIEPRICE.Text = dt(0)(6)
+                        My.Settings.Version = dt(0)(7)
+                        My.Settings.Save()
+                        POSVersion = dt(0)(7)
+                        TextBoxWaffleBag.Text = dt(0)(8)
+                        TextBoxSugarPackets.Text = dt(0)(9)
+                        ConfirmAdditionalSettings = True
+                        FooterInfo = dt(0)(10)
+                    Else
+                        ConfirmAdditionalSettings = False
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+#End Region
+
 End Class
