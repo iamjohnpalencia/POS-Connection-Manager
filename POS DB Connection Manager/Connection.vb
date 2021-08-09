@@ -678,7 +678,7 @@ Public Class Connection
                         ElseIf RadioButtonNO.Checked = True Then
                             RButton = 0
                         End If
-                        Dim fields1 = "A_Export_Path = '" & ConvertToBase64(Trim(TextBoxExportPath.Text)) & "', A_Tax = '" & Tax & "' , A_SIFormat = '" & Trim(TextBoxSINumber.Text) & "' , A_Terminal_No = '" & Trim(TextBoxTerminalNo.Text) & "' , A_ZeroRated = '" & RButton & "', S_Zreading = '" & Format(Now(), "yyyy-MM-dd") & "' , S_Batter = '" & Trim(TextBoxBATTERID.Text) & "', S_Brownie_Mix = '" & Trim(TextBoxBROWNIEID.Text) & "', S_Upgrade_Price_Add = '" & Trim(TextBoxBROWNIEPRICE.Text) & "' , `S_Waffle_Bag` = '" & Trim(TextBoxWaffleBag.Text) & "' , `S_Packets` = '" & Trim(TextBoxSugarPackets.Text) & "' , S_Update_Version = '" & POSVersion & "', P_Footer_Info = '" & FooterInfo & "'"
+                        Dim fields1 = "A_Export_Path = '" & ConvertToBase64(Trim(TextBoxExportPath.Text)) & "', A_Tax = '" & Tax & "' , A_SIFormat = '" & Trim(TextBoxSINumber.Text) & "' , A_SIBeg = '" & Trim(TextBoxSIBeg.Text) & "', A_Terminal_No = '" & Trim(TextBoxTerminalNo.Text) & "' , A_ZeroRated = '" & RButton & "', S_Zreading = '" & Format(Now(), "yyyy-MM-dd") & "' , S_Batter = '" & Trim(TextBoxBATTERID.Text) & "', S_Brownie_Mix = '" & Trim(TextBoxBROWNIEID.Text) & "', S_Upgrade_Price_Add = '" & Trim(TextBoxBROWNIEPRICE.Text) & "' , `S_Waffle_Bag` = '" & Trim(TextBoxWaffleBag.Text) & "' , `S_Packets` = '" & Trim(TextBoxSugarPackets.Text) & "' , S_Update_Version = '" & POSVersion & "', P_Footer_Info = '" & FooterInfo & "'"
                         sql = "UPDATE " & table & " SET " & fields1 & " WHERE " & where
                         cmd = New MySqlCommand(sql, LocalConnection)
                         cmd.ExecuteNonQuery()
@@ -687,10 +687,11 @@ Public Class Connection
                             MsgBox("Saved!")
                         End If
                     Else
-                        Dim fields2 = "(A_Export_Path, A_Tax, A_SIFormat, A_Terminal_No, A_ZeroRated, S_Zreading, S_Batter, S_Brownie_Mix, S_Upgrade_Price_Add , S_Update_Version , S_Waffle_Bag , S_Packets, P_Footer_Info)"
+                        Dim fields2 = "(A_Export_Path, A_Tax, A_SIFormat, A_SIBeg A_Terminal_No, A_ZeroRated, S_Zreading, S_Batter, S_Brownie_Mix, S_Upgrade_Price_Add , S_Update_Version , S_Waffle_Bag , S_Packets, P_Footer_Info)"
                         Dim value = "('" & ConvertToBase64(Trim(TextBoxExportPath.Text)) & "'
                      ,'" & Tax & "'
                      ,'" & Trim(TextBoxSINumber.Text) & "'
+                     ,'" & Trim(TextBoxSIBeg.Text) & "'
                      ,'" & Trim(TextBoxTerminalNo.Text) & "'
                      ,'" & RButton & "'
                      ,'" & Format(Now(), "yyyy-MM-dd") & "'
@@ -756,7 +757,7 @@ Public Class Connection
     Private Sub LoadAdditionalSettings()
         Try
             If ValidLocalConnection = True Then
-                Dim sql = "SELECT A_Export_Path, A_Tax, A_SIFormat, A_Terminal_No, A_ZeroRated FROM loc_settings WHERE settings_id = 1"
+                Dim sql = "SELECT A_Export_Path, A_Tax, A_SIFormat, A_SIBeg, A_Terminal_No, A_ZeroRated FROM loc_settings WHERE settings_id = 1"
                 Dim cmd As MySqlCommand = New MySqlCommand(sql, LocalConnection)
                 Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
                 Dim dt As DataTable = New DataTable
@@ -770,6 +771,7 @@ Public Class Connection
                                         TextBoxExportPath.Text = ConvertB64ToString(row("A_Export_Path"))
                                         TextBoxTax.Text = Val(row("A_Tax")) * 100
                                         TextBoxSINumber.Text = row("A_SIFormat")
+                                        TextBoxSIBeg.Text = row("A_SIBeg")
                                         TextBoxTerminalNo.Text = row("A_Terminal_No")
                                         If Val(row("A_ZeroRated")) = 0 Then
                                             RadioButtonNO.Checked = True
@@ -811,7 +813,7 @@ Public Class Connection
             If ValidCloudConnection = True And ValidLocalConnection = True Then
                 If System.IO.File.Exists(LocalConnectionPath) Then
                     Dim EXPORTPATH = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\Innovention"
-                    Sql = "SELECT `A_Tax`, `A_SIFormat`, `A_Terminal_No`, `A_ZeroRated`, `S_Batter`, `S_Brownie_Mix`, `S_Upgrade_Price_Add` , `S_Update_Version` , `S_Waffle_Bag`, `S_Packets`, `P_Footer_Info` FROM admin_settings_org WHERE settings_id = 1"
+                    Sql = "SELECT `A_Tax`, `A_SIFormat`, `A_SIBeg`, `A_Terminal_No`, `A_ZeroRated`, `S_Batter`, `S_Brownie_Mix`, `S_Upgrade_Price_Add` , `S_Update_Version` , `S_Waffle_Bag`, `S_Packets`, `P_Footer_Info` FROM admin_settings_org WHERE settings_id = 1"
                     Dim cmd As MySqlCommand = New MySqlCommand(Sql, CloudConnection)
                     Dim da As MySqlDataAdapter = New MySqlDataAdapter(cmd)
                     Dim dt As DataTable = New DataTable
@@ -820,22 +822,23 @@ Public Class Connection
                         TextBoxExportPath.Text = EXPORTPATH
                         TextBoxTax.Text = dt(0)(0)
                         TextBoxSINumber.Text = dt(0)(1)
-                        TextBoxTerminalNo.Text = dt(0)(2)
-                        If dt(0)(3) = "0" Then
+                        TextBoxSIBeg.Text = dt(0)(2)
+                        TextBoxTerminalNo.Text = dt(0)(3)
+                        If dt(0)(4) = "0" Then
                             RadioButtonNO.Checked = True
-                        ElseIf dt(0)(3) = "1" Then
+                        ElseIf dt(0)(4) = "1" Then
                             RadioButtonYES.Checked = False
                         End If
-                        TextBoxBATTERID.Text = dt(0)(4)
-                        TextBoxBROWNIEID.Text = dt(0)(5)
-                        TextBoxBROWNIEPRICE.Text = dt(0)(6)
-                        My.Settings.Version = dt(0)(7)
+                        TextBoxBATTERID.Text = dt(0)(5)
+                        TextBoxBROWNIEID.Text = dt(0)(6)
+                        TextBoxBROWNIEPRICE.Text = dt(0)(7)
+                        My.Settings.Version = dt(0)(8)
                         My.Settings.Save()
-                        POSVersion = dt(0)(7)
-                        TextBoxWaffleBag.Text = dt(0)(8)
-                        TextBoxSugarPackets.Text = dt(0)(9)
+                        POSVersion = dt(0)(8)
+                        TextBoxWaffleBag.Text = dt(0)(9)
+                        TextBoxSugarPackets.Text = dt(0)(10)
                         ConfirmAdditionalSettings = True
-                        FooterInfo = dt(0)(10)
+                        FooterInfo = dt(0)(11)
                     Else
                         ConfirmAdditionalSettings = False
                     End If

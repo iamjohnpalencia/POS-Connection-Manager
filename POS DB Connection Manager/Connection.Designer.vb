@@ -79,8 +79,6 @@ Partial Class Connection
         Me.RadioButtonMonthly = New System.Windows.Forms.RadioButton()
         Me.RadioButtonWeekly = New System.Windows.Forms.RadioButton()
         Me.RadioButtonDaily = New System.Windows.Forms.RadioButton()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
@@ -104,7 +102,6 @@ Partial Class Connection
         Me.TextBoxDevTIN = New System.Windows.Forms.TextBox()
         Me.TextBoxDevAdd = New System.Windows.Forms.TextBox()
         Me.TextBoxDevname = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.ButtonEditAddSettings = New System.Windows.Forms.Button()
         Me.ButtonGetExportPath = New System.Windows.Forms.Button()
@@ -131,6 +128,10 @@ Partial Class Connection
         Me.TextBoxBROWNIEPRICE = New System.Windows.Forms.TextBox()
         Me.TextBoxBROWNIEID = New System.Windows.Forms.TextBox()
         Me.TextBoxBATTERID = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBoxSIBeg = New System.Windows.Forms.TextBox()
         Me.TabControl2.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -150,7 +151,6 @@ Partial Class Connection
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
-        Me.TableLayoutPanel9.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.GroupBox19.SuspendLayout()
         Me.SuspendLayout()
@@ -821,10 +821,6 @@ Partial Class Connection
         Me.RadioButtonDaily.Text = "Daily"
         Me.RadioButtonDaily.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.TableLayoutPanel8)
@@ -842,8 +838,9 @@ Partial Class Connection
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel8.Controls.Add(Me.GroupBox10, 1, 0)
         Me.TableLayoutPanel8.Controls.Add(Me.GroupBox11, 0, 0)
-        Me.TableLayoutPanel8.Controls.Add(Me.TableLayoutPanel9, 1, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.GroupBox19, 2, 0)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
@@ -1078,23 +1075,10 @@ Partial Class Connection
         Me.TextBoxDevname.Size = New System.Drawing.Size(245, 22)
         Me.TextBoxDevname.TabIndex = 254
         '
-        'TableLayoutPanel9
-        '
-        Me.TableLayoutPanel9.ColumnCount = 1
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.GroupBox10, 0, 0)
-        Me.TableLayoutPanel9.Controls.Add(Me.GroupBox19, 0, 1)
-        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(340, 3)
-        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
-        Me.TableLayoutPanel9.RowCount = 2
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(331, 473)
-        Me.TableLayoutPanel9.TabIndex = 295
-        '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.TextBoxSIBeg)
+        Me.GroupBox10.Controls.Add(Me.Label4)
         Me.GroupBox10.Controls.Add(Me.ButtonEditAddSettings)
         Me.GroupBox10.Controls.Add(Me.ButtonGetExportPath)
         Me.GroupBox10.Controls.Add(Me.ButtonSaveAddSettings)
@@ -1110,9 +1094,9 @@ Partial Class Connection
         Me.GroupBox10.Controls.Add(Me.TextBoxSINumber)
         Me.GroupBox10.Controls.Add(Me.Label19)
         Me.GroupBox10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox10.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox10.Location = New System.Drawing.Point(340, 3)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(325, 230)
+        Me.GroupBox10.Size = New System.Drawing.Size(331, 473)
         Me.GroupBox10.TabIndex = 293
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Additional Settings"
@@ -1124,7 +1108,7 @@ Partial Class Connection
         Me.ButtonEditAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonEditAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonEditAddSettings.ForeColor = System.Drawing.Color.White
-        Me.ButtonEditAddSettings.Location = New System.Drawing.Point(218, 196)
+        Me.ButtonEditAddSettings.Location = New System.Drawing.Point(218, 236)
         Me.ButtonEditAddSettings.Name = "ButtonEditAddSettings"
         Me.ButtonEditAddSettings.Size = New System.Drawing.Size(65, 23)
         Me.ButtonEditAddSettings.TabIndex = 294
@@ -1152,7 +1136,7 @@ Partial Class Connection
         Me.ButtonSaveAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonSaveAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSaveAddSettings.ForeColor = System.Drawing.Color.White
-        Me.ButtonSaveAddSettings.Location = New System.Drawing.Point(38, 196)
+        Me.ButtonSaveAddSettings.Location = New System.Drawing.Point(38, 236)
         Me.ButtonSaveAddSettings.Name = "ButtonSaveAddSettings"
         Me.ButtonSaveAddSettings.Size = New System.Drawing.Size(174, 23)
         Me.ButtonSaveAddSettings.TabIndex = 293
@@ -1171,7 +1155,7 @@ Partial Class Connection
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(35, 152)
+        Me.Label17.Location = New System.Drawing.Point(37, 193)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(76, 14)
         Me.Label17.TabIndex = 292
@@ -1190,7 +1174,7 @@ Partial Class Connection
         'TextBoxTerminalNo
         '
         Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 168)
+        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 208)
         Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
         Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 22)
         Me.TextBoxTerminalNo.TabIndex = 291
@@ -1277,8 +1261,7 @@ Partial Class Connection
         Me.GroupBox19.Controls.Add(Me.TextBoxBROWNIEPRICE)
         Me.GroupBox19.Controls.Add(Me.TextBoxBROWNIEID)
         Me.GroupBox19.Controls.Add(Me.TextBoxBATTERID)
-        Me.GroupBox19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox19.Location = New System.Drawing.Point(3, 239)
+        Me.GroupBox19.Location = New System.Drawing.Point(677, 3)
         Me.GroupBox19.Name = "GroupBox19"
         Me.GroupBox19.Size = New System.Drawing.Size(325, 231)
         Me.GroupBox19.TabIndex = 294
@@ -1385,6 +1368,28 @@ Partial Class Connection
         Me.TextBoxBATTERID.Size = New System.Drawing.Size(118, 22)
         Me.TextBoxBATTERID.TabIndex = 255
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(35, 151)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(126, 14)
+        Me.Label4.TabIndex = 295
+        Me.Label4.Text = "SI Beginning Number:"
+        '
+        'TextBoxSIBeg
+        '
+        Me.TextBoxSIBeg.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSIBeg.Location = New System.Drawing.Point(38, 168)
+        Me.TextBoxSIBeg.Name = "TextBoxSIBeg"
+        Me.TextBoxSIBeg.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxSIBeg.TabIndex = 296
+        '
         'Connection
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -1424,7 +1429,6 @@ Partial Class Connection
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox11.PerformLayout()
-        Me.TableLayoutPanel9.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
         Me.GroupBox19.ResumeLayout(False)
@@ -1515,7 +1519,6 @@ Partial Class Connection
     Friend WithEvents TextBoxDevTIN As TextBox
     Friend WithEvents TextBoxDevAdd As TextBox
     Friend WithEvents TextBoxDevname As TextBox
-    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents ButtonEditAddSettings As Button
     Friend WithEvents ButtonGetExportPath As Button
@@ -1542,4 +1545,6 @@ Partial Class Connection
     Friend WithEvents TextBoxBROWNIEPRICE As TextBox
     Friend WithEvents TextBoxBROWNIEID As TextBox
     Friend WithEvents TextBoxBATTERID As TextBox
+    Friend WithEvents TextBoxSIBeg As TextBox
+    Friend WithEvents Label4 As Label
 End Class
