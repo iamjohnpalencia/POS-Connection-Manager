@@ -16,6 +16,8 @@ Public Class Connection
         Try
             TabControl2.TabPages(0).Text = "Connection Settings"
             TabControl2.TabPages(1).Text = "Additional Settings"
+            TabControl2.TabPages(2).Text = "Reset Table"
+
             LoadConn()
             LoadCloudConn()
             LoadAutoBackup()
@@ -844,6 +846,56 @@ Public Class Connection
                     End If
                 End If
             End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            Dim array() As String = {"loc_e_journal", "loc_zread_table", "tbcountertable", "loc_audit_trail"}
+
+            If CheckBox2.Checked Then
+                TruncateTableAll("loc_e_journal")
+                RichTextBox1.Text &= "Complete : " & CheckBox2.Text & " Reset" & vbCrLf
+
+            End If
+            If CheckBox3.Checked Then
+                TruncateTableAll("loc_zread_table")
+                RichTextBox1.Text &= "Complete : " & CheckBox3.Text & " Reset" & vbCrLf
+
+            End If
+            If CheckBox4.Checked Then
+                TruncateTableAll("tbcountertable")
+                RichTextBox1.Text &= "Complete : " & CheckBox4.Text & " Reset" & vbCrLf
+
+            End If
+            If CheckBox5.Checked Then
+                TruncateTableAll("loc_audit_trail")
+                RichTextBox1.Text &= "Complete : " & CheckBox5.Text & " Reset" & vbCrLf
+            End If
+
+            If CheckBox1.Checked Then
+                RichTextBox1.Text &= "Reset All Table" & vbCrLf
+
+                For Each value As String In array
+                    TruncateTableAll(value)
+                    RichTextBox1.Text &= "Complete : " & value & " Reset" & vbCrLf
+                Next
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub TruncateTableAll(ToTruncate)
+        Try
+            Dim ConnectionLocal As MySqlConnection = LocalConnection()
+            Dim Query As String = "TRUNCATE TABLE  " & ToTruncate & " ;"
+            Console.WriteLine(Query)
+            Dim cmd As MySqlCommand = New MySqlCommand(Query, ConnectionLocal)
+            cmd.ExecuteNonQuery()
+            ConnectionLocal.Close()
+            cmd.Dispose()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try

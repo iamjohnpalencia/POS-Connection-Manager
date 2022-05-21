@@ -81,6 +81,23 @@ Partial Class Connection
         Me.RadioButtonDaily = New System.Windows.Forms.RadioButton()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxSIBeg = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ButtonEditAddSettings = New System.Windows.Forms.Button()
+        Me.ButtonGetExportPath = New System.Windows.Forms.Button()
+        Me.ButtonSaveAddSettings = New System.Windows.Forms.Button()
+        Me.TextBoxExportPath = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.TextBoxTerminalNo = New System.Windows.Forms.TextBox()
+        Me.RadioButtonYES = New System.Windows.Forms.RadioButton()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.RadioButtonNO = New System.Windows.Forms.RadioButton()
+        Me.TextBoxTax = New System.Windows.Forms.TextBox()
+        Me.TextBoxSINumber = New System.Windows.Forms.TextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.ButtonEditDevSet = New System.Windows.Forms.Button()
         Me.ButtonSaveDevSettings = New System.Windows.Forms.Button()
@@ -102,21 +119,6 @@ Partial Class Connection
         Me.TextBoxDevTIN = New System.Windows.Forms.TextBox()
         Me.TextBoxDevAdd = New System.Windows.Forms.TextBox()
         Me.TextBoxDevname = New System.Windows.Forms.TextBox()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.ButtonEditAddSettings = New System.Windows.Forms.Button()
-        Me.ButtonGetExportPath = New System.Windows.Forms.Button()
-        Me.ButtonSaveAddSettings = New System.Windows.Forms.Button()
-        Me.TextBoxExportPath = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.TextBoxTerminalNo = New System.Windows.Forms.TextBox()
-        Me.RadioButtonYES = New System.Windows.Forms.RadioButton()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.RadioButtonNO = New System.Windows.Forms.RadioButton()
-        Me.TextBoxTax = New System.Windows.Forms.TextBox()
-        Me.TextBoxSINumber = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox19 = New System.Windows.Forms.GroupBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -130,8 +132,18 @@ Partial Class Connection
         Me.TextBoxBATTERID = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBoxSIBeg = New System.Windows.Forms.TextBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.TabControl2.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -150,15 +162,21 @@ Partial Class Connection
         Me.GroupBox5.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
         Me.GroupBox19.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl2
         '
         Me.TabControl2.Controls.Add(Me.TabPage11)
         Me.TabControl2.Controls.Add(Me.TabPage1)
+        Me.TabControl2.Controls.Add(Me.TabPage2)
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
@@ -850,6 +868,198 @@ Partial Class Connection
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(1012, 479)
         Me.TableLayoutPanel8.TabIndex = 297
         '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.TextBoxSIBeg)
+        Me.GroupBox10.Controls.Add(Me.Label4)
+        Me.GroupBox10.Controls.Add(Me.ButtonEditAddSettings)
+        Me.GroupBox10.Controls.Add(Me.ButtonGetExportPath)
+        Me.GroupBox10.Controls.Add(Me.ButtonSaveAddSettings)
+        Me.GroupBox10.Controls.Add(Me.TextBoxExportPath)
+        Me.GroupBox10.Controls.Add(Me.Label17)
+        Me.GroupBox10.Controls.Add(Me.Label56)
+        Me.GroupBox10.Controls.Add(Me.TextBoxTerminalNo)
+        Me.GroupBox10.Controls.Add(Me.RadioButtonYES)
+        Me.GroupBox10.Controls.Add(Me.Label18)
+        Me.GroupBox10.Controls.Add(Me.Label20)
+        Me.GroupBox10.Controls.Add(Me.RadioButtonNO)
+        Me.GroupBox10.Controls.Add(Me.TextBoxTax)
+        Me.GroupBox10.Controls.Add(Me.TextBoxSINumber)
+        Me.GroupBox10.Controls.Add(Me.Label19)
+        Me.GroupBox10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox10.Location = New System.Drawing.Point(340, 3)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(331, 473)
+        Me.GroupBox10.TabIndex = 293
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Additional Settings"
+        '
+        'TextBoxSIBeg
+        '
+        Me.TextBoxSIBeg.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSIBeg.Location = New System.Drawing.Point(38, 168)
+        Me.TextBoxSIBeg.Name = "TextBoxSIBeg"
+        Me.TextBoxSIBeg.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxSIBeg.TabIndex = 296
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(35, 151)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(126, 14)
+        Me.Label4.TabIndex = 295
+        Me.Label4.Text = "SI Beginning Number:"
+        '
+        'ButtonEditAddSettings
+        '
+        Me.ButtonEditAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.ButtonEditAddSettings.FlatAppearance.BorderSize = 0
+        Me.ButtonEditAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonEditAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonEditAddSettings.ForeColor = System.Drawing.Color.White
+        Me.ButtonEditAddSettings.Location = New System.Drawing.Point(218, 236)
+        Me.ButtonEditAddSettings.Name = "ButtonEditAddSettings"
+        Me.ButtonEditAddSettings.Size = New System.Drawing.Size(65, 23)
+        Me.ButtonEditAddSettings.TabIndex = 294
+        Me.ButtonEditAddSettings.Text = "Edit"
+        Me.ButtonEditAddSettings.UseVisualStyleBackColor = False
+        '
+        'ButtonGetExportPath
+        '
+        Me.ButtonGetExportPath.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ButtonGetExportPath.FlatAppearance.BorderSize = 0
+        Me.ButtonGetExportPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonGetExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonGetExportPath.ForeColor = System.Drawing.Color.White
+        Me.ButtonGetExportPath.Location = New System.Drawing.Point(238, 44)
+        Me.ButtonGetExportPath.Name = "ButtonGetExportPath"
+        Me.ButtonGetExportPath.Size = New System.Drawing.Size(45, 22)
+        Me.ButtonGetExportPath.TabIndex = 294
+        Me.ButtonGetExportPath.Text = "..."
+        Me.ButtonGetExportPath.UseVisualStyleBackColor = False
+        '
+        'ButtonSaveAddSettings
+        '
+        Me.ButtonSaveAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ButtonSaveAddSettings.FlatAppearance.BorderSize = 0
+        Me.ButtonSaveAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonSaveAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonSaveAddSettings.ForeColor = System.Drawing.Color.White
+        Me.ButtonSaveAddSettings.Location = New System.Drawing.Point(38, 236)
+        Me.ButtonSaveAddSettings.Name = "ButtonSaveAddSettings"
+        Me.ButtonSaveAddSettings.Size = New System.Drawing.Size(174, 23)
+        Me.ButtonSaveAddSettings.TabIndex = 293
+        Me.ButtonSaveAddSettings.Text = "Save"
+        Me.ButtonSaveAddSettings.UseVisualStyleBackColor = False
+        '
+        'TextBoxExportPath
+        '
+        Me.TextBoxExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxExportPath.Location = New System.Drawing.Point(38, 44)
+        Me.TextBoxExportPath.Name = "TextBoxExportPath"
+        Me.TextBoxExportPath.Size = New System.Drawing.Size(200, 22)
+        Me.TextBoxExportPath.TabIndex = 282
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(37, 193)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(76, 14)
+        Me.Label17.TabIndex = 292
+        Me.Label17.Text = "Terminal No."
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.Location = New System.Drawing.Point(194, 69)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(72, 14)
+        Me.Label56.TabIndex = 285
+        Me.Label56.Text = "Zero Rated:"
+        '
+        'TextBoxTerminalNo
+        '
+        Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 208)
+        Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
+        Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxTerminalNo.TabIndex = 291
+        '
+        'RadioButtonYES
+        '
+        Me.RadioButtonYES.AutoSize = True
+        Me.RadioButtonYES.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonYES.Location = New System.Drawing.Point(197, 87)
+        Me.RadioButtonYES.Name = "RadioButtonYES"
+        Me.RadioButtonYES.Size = New System.Drawing.Size(45, 18)
+        Me.RadioButtonYES.TabIndex = 287
+        Me.RadioButtonYES.TabStop = True
+        Me.RadioButtonYES.Text = "Yes"
+        Me.RadioButtonYES.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(35, 111)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(111, 14)
+        Me.Label18.TabIndex = 290
+        Me.Label18.Text = "SI Number Format:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(35, 27)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(76, 14)
+        Me.Label20.TabIndex = 283
+        Me.Label20.Text = "Export Path:"
+        '
+        'RadioButtonNO
+        '
+        Me.RadioButtonNO.AutoSize = True
+        Me.RadioButtonNO.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButtonNO.Location = New System.Drawing.Point(245, 87)
+        Me.RadioButtonNO.Name = "RadioButtonNO"
+        Me.RadioButtonNO.Size = New System.Drawing.Size(40, 18)
+        Me.RadioButtonNO.TabIndex = 288
+        Me.RadioButtonNO.TabStop = True
+        Me.RadioButtonNO.Text = "No"
+        Me.RadioButtonNO.UseVisualStyleBackColor = True
+        '
+        'TextBoxTax
+        '
+        Me.TextBoxTax.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTax.Location = New System.Drawing.Point(38, 86)
+        Me.TextBoxTax.Name = "TextBoxTax"
+        Me.TextBoxTax.Size = New System.Drawing.Size(153, 22)
+        Me.TextBoxTax.TabIndex = 284
+        '
+        'TextBoxSINumber
+        '
+        Me.TextBoxSINumber.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSINumber.Location = New System.Drawing.Point(38, 126)
+        Me.TextBoxSINumber.Name = "TextBoxSINumber"
+        Me.TextBoxSINumber.Size = New System.Drawing.Size(245, 22)
+        Me.TextBoxSINumber.TabIndex = 289
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(35, 69)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(31, 14)
+        Me.Label19.TabIndex = 286
+        Me.Label19.Text = "Tax:"
+        '
         'GroupBox11
         '
         Me.GroupBox11.Controls.Add(Me.ButtonEditDevSet)
@@ -1075,180 +1285,6 @@ Partial Class Connection
         Me.TextBoxDevname.Size = New System.Drawing.Size(245, 22)
         Me.TextBoxDevname.TabIndex = 254
         '
-        'GroupBox10
-        '
-        Me.GroupBox10.Controls.Add(Me.TextBoxSIBeg)
-        Me.GroupBox10.Controls.Add(Me.Label4)
-        Me.GroupBox10.Controls.Add(Me.ButtonEditAddSettings)
-        Me.GroupBox10.Controls.Add(Me.ButtonGetExportPath)
-        Me.GroupBox10.Controls.Add(Me.ButtonSaveAddSettings)
-        Me.GroupBox10.Controls.Add(Me.TextBoxExportPath)
-        Me.GroupBox10.Controls.Add(Me.Label17)
-        Me.GroupBox10.Controls.Add(Me.Label56)
-        Me.GroupBox10.Controls.Add(Me.TextBoxTerminalNo)
-        Me.GroupBox10.Controls.Add(Me.RadioButtonYES)
-        Me.GroupBox10.Controls.Add(Me.Label18)
-        Me.GroupBox10.Controls.Add(Me.Label20)
-        Me.GroupBox10.Controls.Add(Me.RadioButtonNO)
-        Me.GroupBox10.Controls.Add(Me.TextBoxTax)
-        Me.GroupBox10.Controls.Add(Me.TextBoxSINumber)
-        Me.GroupBox10.Controls.Add(Me.Label19)
-        Me.GroupBox10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox10.Location = New System.Drawing.Point(340, 3)
-        Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(331, 473)
-        Me.GroupBox10.TabIndex = 293
-        Me.GroupBox10.TabStop = False
-        Me.GroupBox10.Text = "Additional Settings"
-        '
-        'ButtonEditAddSettings
-        '
-        Me.ButtonEditAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.ButtonEditAddSettings.FlatAppearance.BorderSize = 0
-        Me.ButtonEditAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonEditAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEditAddSettings.ForeColor = System.Drawing.Color.White
-        Me.ButtonEditAddSettings.Location = New System.Drawing.Point(218, 236)
-        Me.ButtonEditAddSettings.Name = "ButtonEditAddSettings"
-        Me.ButtonEditAddSettings.Size = New System.Drawing.Size(65, 23)
-        Me.ButtonEditAddSettings.TabIndex = 294
-        Me.ButtonEditAddSettings.Text = "Edit"
-        Me.ButtonEditAddSettings.UseVisualStyleBackColor = False
-        '
-        'ButtonGetExportPath
-        '
-        Me.ButtonGetExportPath.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ButtonGetExportPath.FlatAppearance.BorderSize = 0
-        Me.ButtonGetExportPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonGetExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonGetExportPath.ForeColor = System.Drawing.Color.White
-        Me.ButtonGetExportPath.Location = New System.Drawing.Point(238, 44)
-        Me.ButtonGetExportPath.Name = "ButtonGetExportPath"
-        Me.ButtonGetExportPath.Size = New System.Drawing.Size(45, 22)
-        Me.ButtonGetExportPath.TabIndex = 294
-        Me.ButtonGetExportPath.Text = "..."
-        Me.ButtonGetExportPath.UseVisualStyleBackColor = False
-        '
-        'ButtonSaveAddSettings
-        '
-        Me.ButtonSaveAddSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ButtonSaveAddSettings.FlatAppearance.BorderSize = 0
-        Me.ButtonSaveAddSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonSaveAddSettings.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSaveAddSettings.ForeColor = System.Drawing.Color.White
-        Me.ButtonSaveAddSettings.Location = New System.Drawing.Point(38, 236)
-        Me.ButtonSaveAddSettings.Name = "ButtonSaveAddSettings"
-        Me.ButtonSaveAddSettings.Size = New System.Drawing.Size(174, 23)
-        Me.ButtonSaveAddSettings.TabIndex = 293
-        Me.ButtonSaveAddSettings.Text = "Save"
-        Me.ButtonSaveAddSettings.UseVisualStyleBackColor = False
-        '
-        'TextBoxExportPath
-        '
-        Me.TextBoxExportPath.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxExportPath.Location = New System.Drawing.Point(38, 44)
-        Me.TextBoxExportPath.Name = "TextBoxExportPath"
-        Me.TextBoxExportPath.Size = New System.Drawing.Size(200, 22)
-        Me.TextBoxExportPath.TabIndex = 282
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(37, 193)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(76, 14)
-        Me.Label17.TabIndex = 292
-        Me.Label17.Text = "Terminal No."
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(194, 69)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(72, 14)
-        Me.Label56.TabIndex = 285
-        Me.Label56.Text = "Zero Rated:"
-        '
-        'TextBoxTerminalNo
-        '
-        Me.TextBoxTerminalNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTerminalNo.Location = New System.Drawing.Point(38, 208)
-        Me.TextBoxTerminalNo.Name = "TextBoxTerminalNo"
-        Me.TextBoxTerminalNo.Size = New System.Drawing.Size(245, 22)
-        Me.TextBoxTerminalNo.TabIndex = 291
-        '
-        'RadioButtonYES
-        '
-        Me.RadioButtonYES.AutoSize = True
-        Me.RadioButtonYES.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonYES.Location = New System.Drawing.Point(197, 87)
-        Me.RadioButtonYES.Name = "RadioButtonYES"
-        Me.RadioButtonYES.Size = New System.Drawing.Size(45, 18)
-        Me.RadioButtonYES.TabIndex = 287
-        Me.RadioButtonYES.TabStop = True
-        Me.RadioButtonYES.Text = "Yes"
-        Me.RadioButtonYES.UseVisualStyleBackColor = True
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(35, 111)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(111, 14)
-        Me.Label18.TabIndex = 290
-        Me.Label18.Text = "SI Number Format:"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(35, 27)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(76, 14)
-        Me.Label20.TabIndex = 283
-        Me.Label20.Text = "Export Path:"
-        '
-        'RadioButtonNO
-        '
-        Me.RadioButtonNO.AutoSize = True
-        Me.RadioButtonNO.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButtonNO.Location = New System.Drawing.Point(245, 87)
-        Me.RadioButtonNO.Name = "RadioButtonNO"
-        Me.RadioButtonNO.Size = New System.Drawing.Size(40, 18)
-        Me.RadioButtonNO.TabIndex = 288
-        Me.RadioButtonNO.TabStop = True
-        Me.RadioButtonNO.Text = "No"
-        Me.RadioButtonNO.UseVisualStyleBackColor = True
-        '
-        'TextBoxTax
-        '
-        Me.TextBoxTax.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxTax.Location = New System.Drawing.Point(38, 86)
-        Me.TextBoxTax.Name = "TextBoxTax"
-        Me.TextBoxTax.Size = New System.Drawing.Size(153, 22)
-        Me.TextBoxTax.TabIndex = 284
-        '
-        'TextBoxSINumber
-        '
-        Me.TextBoxSINumber.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxSINumber.Location = New System.Drawing.Point(38, 126)
-        Me.TextBoxSINumber.Name = "TextBoxSINumber"
-        Me.TextBoxSINumber.Size = New System.Drawing.Size(245, 22)
-        Me.TextBoxSINumber.TabIndex = 289
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(35, 69)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(31, 14)
-        Me.Label19.TabIndex = 286
-        Me.Label19.Text = "Tax:"
-        '
         'GroupBox19
         '
         Me.GroupBox19.Controls.Add(Me.Label26)
@@ -1372,23 +1408,137 @@ Partial Class Connection
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Label4
+        'TabPage2
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(35, 151)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 14)
-        Me.Label4.TabIndex = 295
-        Me.Label4.Text = "SI Beginning Number:"
+        Me.TabPage2.Controls.Add(Me.GroupBox7)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1018, 485)
+        Me.TabPage2.TabIndex = 2
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'TextBoxSIBeg
+        'GroupBox7
         '
-        Me.TextBoxSIBeg.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxSIBeg.Location = New System.Drawing.Point(38, 168)
-        Me.TextBoxSIBeg.Name = "TextBoxSIBeg"
-        Me.TextBoxSIBeg.Size = New System.Drawing.Size(245, 22)
-        Me.TextBoxSIBeg.TabIndex = 296
+        Me.GroupBox7.Controls.Add(Me.TableLayoutPanel4)
+        Me.GroupBox7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox7.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(1012, 479)
+        Me.GroupBox7.TabIndex = 0
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Reset Table"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(85, 9)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(47, 23)
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.Text = "All"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(85, 38)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(139, 23)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.Text = "E-Journal Table"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(85, 67)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(122, 23)
+        Me.CheckBox3.TabIndex = 2
+        Me.CheckBox3.Text = "Z-Read Table"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(85, 96)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(171, 23)
+        Me.CheckBox4.TabIndex = 3
+        Me.CheckBox4.Text = "Reset Counter Table"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(85, 154)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(171, 31)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "RESET"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(85, 125)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(147, 23)
+        Me.CheckBox5.TabIndex = 5
+        Me.CheckBox5.Text = "Audit Trail Table"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 3
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel4.Controls.Add(Me.GroupBox8, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 1, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 23)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1006, 453)
+        Me.TableLayoutPanel4.TabIndex = 6
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.CheckBox1)
+        Me.Panel1.Controls.Add(Me.CheckBox5)
+        Me.Panel1.Controls.Add(Me.CheckBox2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.CheckBox3)
+        Me.Panel1.Controls.Add(Me.CheckBox4)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(338, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(329, 447)
+        Me.Panel1.TabIndex = 0
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 23)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(324, 421)
+        Me.RichTextBox1.TabIndex = 1
+        Me.RichTextBox1.Text = ""
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox8.Location = New System.Drawing.Point(673, 3)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(330, 447)
+        Me.GroupBox8.TabIndex = 6
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "RESET LOGS"
         '
         'Connection
         '
@@ -1427,12 +1577,18 @@ Partial Class Connection
         Me.GroupBox5.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
-        Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox11.PerformLayout()
         Me.GroupBox19.ResumeLayout(False)
         Me.GroupBox19.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1547,4 +1703,16 @@ Partial Class Connection
     Friend WithEvents TextBoxBATTERID As TextBox
     Friend WithEvents TextBoxSIBeg As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
