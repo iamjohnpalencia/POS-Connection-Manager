@@ -16,7 +16,7 @@ Public Class Connection
         Try
             TabControl2.TabPages(0).Text = "Connection Settings"
             TabControl2.TabPages(1).Text = "Additional Settings"
-            TabControl2.TabPages(2).Text = "Reset Table"
+            TabControl2.TabPages(2).Text = "Local Reset Table"
 
             LoadConn()
             LoadCloudConn()
@@ -112,7 +112,7 @@ Public Class Connection
             MsgBox(ex.ToString)
         End Try
     End Sub
-    Private Sub LoadCloudConn()
+    public Sub LoadCloudConn()
         Try
             If ValidLocalConnection = True Then
                 Dim Sql = "SELECT C_Server, C_Username, C_Password, C_Database, C_Port FROM loc_settings WHERE settings_id = 1"
@@ -877,7 +877,6 @@ Public Class Connection
 
             If CheckBox1.Checked Then
                 RichTextBox1.Text &= "Reset All Table" & vbCrLf
-
                 For Each value As String In array
                     TruncateTableAll(value)
                     RichTextBox1.Text &= "Complete : " & value & " Reset" & vbCrLf
@@ -900,6 +899,318 @@ Public Class Connection
             MsgBox(ex.ToString)
         End Try
     End Sub
+
+    Private Sub TruncateWebTable(ToTruncateWeb)
+        Try
+            Dim ConnectionLocal As MySqlConnection = CloudConnection()
+            Dim Query As String = "TRUNCATE TABLE  " & ToTruncateWeb & " ;"
+            Console.WriteLine(Query)
+            Dim cmd As MySqlCommand = New MySqlCommand(Query, ConnectionLocal)
+            cmd.ExecuteNonQuery()
+            ConnectionLocal.Close()
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Try
+            Dim array() As String = {"admin_outlets", "admin_pos_inventory", "admin_pos_zread_inventory", "admin_serialkeys", "admin_system_logs", "loc_users", "event_logs"}
+
+            If CheckBox6.Checked Then
+                'TruncateWebTable("admin_serialkeys")
+                TextBox1.Text &= CheckBox6.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox7.Checked Then
+                'TruncateWebTable("admin_pos_inventory")
+                TextBox1.Text &= CheckBox7.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox8.Checked Then
+                'TruncateWebTable("admin_pos_zread_inventory")
+                TextBox1.Text &= CheckBox8.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox9.Checked Then
+                'TruncateWebTable("admin_serialkeys")
+                TextBox1.Text &= CheckBox9.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox10.Checked Then
+                'TruncateWebTable("admin_system_logs")
+                TextBox1.Text &= CheckBox10.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox11.Checked Then
+                'TruncateWebTable("loc_users")
+                TextBox1.Text &= CheckBox11.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+            If CheckBox12.Checked Then
+                TruncateWebTable("event_logs")
+                TextBox1.Text &= CheckBox12.Text & " Table reset successfully . . ." & vbCrLf
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            Dim Connectionweb As MySqlConnection = CloudConnection()
+            Dim Query As String
+            Connectionweb.Close()
+            If ComboBox1.Text = Trim(String.Empty) Then
+                MsgBox("Please check fields if answered correctly")
+            ElseIf ComboBox2.Text = Trim(String.Empty) Then
+                MsgBox("Please check fields if answered correctly")
+            ElseIf ComboBox2.Enabled = False Then
+                MsgBox("Please check fields if answered correctly")
+            ElseIf ComboBox3.Enabled = False And ComboBox4.Enabled = False Then
+                If MsgBox(“This will delete all data in the table related to the Store. Are you sure you want to Proceed?”, MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    Query = "Delete from " & ComboBox1.Text & " where store_id=" & ComboBox2.Text
+                End If
+            ElseIf ComboBox3.Enabled = True Then
+                Query = "Delete from " & ComboBox1.Text & " where store_id=" & ComboBox2.Text & " and loc_transaction_id=" & ComboBox3.Text
+            ElseIf ComboBox4.Enabled = True Then
+                Query = "Delete from " & ComboBox1.Text & " where store_id=" & ComboBox2.Text & " and zreading= '" & ComboBox4.Text & "'"
+            End If
+            MsgBox(Query)
+            'Connectionweb.Open()
+            'Dim mysc As New MySqlCommand(Query, Connectionweb)
+            'mysc.ExecuteNonQuery()
+            'Connectionweb.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub loadcombobox1() 'loading the Tablenames
+        Try
+            Dim Connectionweb As MySqlConnection = CloudConnection()
+            Dim Query As String = "show tables"
+
+            Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+
+            Dim table As New DataTable
+
+            adapter.Fill(table)
+
+            ComboBox1.DataSource = table
+            ComboBox1.ValueMember = "TABLES_IN_POSREV"
+            ComboBox1.DisplayMember = "TABLES_IN_POSREV"
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub loadcombobox2() 'loading the storeID
+        Try
+            Dim cont As String = ComboBox1.Text
+
+            Select Case cont
+                Case "admin_pos_inventory"
+                    contentsinquery()
+                    ComboBox2.Enabled = True
+                Case "admin_pos_zread_inventory"
+                    contentsinquery()
+                    ComboBox2.Enabled = True
+                Case "admin_system_logs"
+                    Dim Connectionweb As MySqlConnection = CloudConnection()
+                    Dim Query As String = "SELECT DISTINCT log_store FROM " & ComboBox1.Text
+                    Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+                    Dim table As New DataTable
+                    adapter.Fill(table)
+                    ComboBox2.DataSource = table
+                    ComboBox2.ValueMember = "log_store"
+                    ComboBox2.DisplayMember = "log_store"
+                    ComboBox2.Enabled = True
+                    ComboBox3.Enabled = False
+                    ComboBox4.Enabled = False
+                'store_id=log_store
+                Case "loc_users"
+                    contentsinquery()
+                    ComboBox2.Enabled = True
+                Case "admin_outlets"
+                    contentsinquery()
+                    ComboBox2.Enabled = True
+                Case "admin_daily_transaction"
+                    contentsinquery1()
+                Case "admin_daily_transaction_details"
+                    contentsinquery1()
+                Case Else
+                    ComboBox2.SelectedIndex = -1
+                    ComboBox3.SelectedIndex = -1
+                    ComboBox4.SelectedIndex = -1
+                    ComboBox2.Enabled = False
+                    ComboBox3.Enabled = False
+                    ComboBox4.Enabled = False
+            End Select
+
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub contentsinquery()
+        ComboBox2.SelectedIndex = -1
+        ComboBox3.SelectedIndex = -1
+        ComboBox4.SelectedIndex = -1
+        Dim Connectionweb As MySqlConnection = CloudConnection()
+        Dim Query As String = "SELECT DISTINCT STORE_ID FROM " & ComboBox1.Text
+        Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+        Dim table As New DataTable
+        adapter.Fill(table)
+        ComboBox2.DataSource = table
+        ComboBox2.ValueMember = "STORE_ID"
+        ComboBox2.DisplayMember = "STORE_ID"
+        ComboBox2.Enabled = False
+        ComboBox3.Enabled = False
+        ComboBox4.Enabled = False
+    End Sub
+
+    Private Sub contentsinquery1()
+        ComboBox2.SelectedIndex = -1
+        ComboBox3.SelectedIndex = -1
+        ComboBox4.SelectedIndex = -1
+        Dim Connectionweb As MySqlConnection = CloudConnection()
+        Dim Query As String = "SELECT DISTINCT STORE_ID FROM " & ComboBox1.Text
+        Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+        Dim table As New DataTable
+        adapter.Fill(table)
+        ComboBox2.DataSource = table
+        ComboBox2.ValueMember = "STORE_ID"
+        ComboBox2.DisplayMember = "STORE_ID"
+        ComboBox2.Enabled = True
+        ComboBox3.Enabled = True
+        ComboBox4.Enabled = False
+    End Sub
+    Private Sub loadcombobox3() 'loading the transactionID
+        Try
+            Dim Connectionweb As MySqlConnection = CloudConnection()
+
+            If ComboBox1.Text = "admin_daily_transaction" Then
+                Dim Query As String = "SELECT DISTINCT loc_transaction_id FROM " & ComboBox1.Text & " where store_id = " & ComboBox2.Text
+                Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+                Dim table As New DataTable
+                adapter.Fill(table)
+
+                ComboBox3.DataSource = table
+                ComboBox3.ValueMember = "loc_transaction_id"
+                ComboBox3.DisplayMember = "loc_transaction_id"
+
+            ElseIf ComboBox1.Text = "admin_daily_transaction_details" Then
+                Dim Query As String = "SELECT DISTINCT loc_details_id FROM " & ComboBox1.Text & " where store_id = " & ComboBox2.Text
+                Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+                Dim table As New DataTable
+                adapter.Fill(table)
+
+                ComboBox3.DataSource = table
+                ComboBox3.ValueMember = "loc_details_id"
+                ComboBox3.DisplayMember = "loc_details_id"
+            Else
+
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+        Try
+            If ComboBox1.Text = Nothing Then
+                MsgBox("Cannot view empty table", vbInformation)
+            Else
+                Tables.Show()
+                Dim Connectionweb As MySqlConnection = CloudConnection()
+                Connectionweb.Close()
+                Dim Query As String = "SELECT * FROM " & ComboBox1.Text
+                Connectionweb.Open()
+                Dim Search As New MySqlDataAdapter(Query, Connectionweb)
+                Dim ds As DataSet = New DataSet
+                Search.Fill(ds, ComboBox1.Text)
+                Tables.DataGridView1.DataSource = ds.Tables(ComboBox1.Text)
+                Connectionweb.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub loadcombobox4() 'loading the transactionID
+        Try
+            Dim Connectionweb As MySqlConnection = CloudConnection()
+
+            If ComboBox1.Text = "admin_daily_transaction" Then
+                Dim Query As String = "SELECT DISTINCT zreading FROM " & ComboBox1.Text & " where store_id = " & ComboBox2.Text
+                Dim adapter As New MySqlDataAdapter(Query, Connectionweb)
+                Dim table As New DataTable
+                adapter.Fill(table)
+
+                ComboBox4.DataSource = table
+                ComboBox4.ValueMember = "zreading"
+                ComboBox4.DisplayMember = "zreading"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        loadcombobox1()
+    End Sub
+    Private Sub ComboBox1_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedValueChanged
+        loadcombobox2()
+        loadcombobox4()
+    End Sub
+    Private Sub ComboBox2_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedValueChanged
+        loadcombobox3()
+    End Sub
+
+    Private Sub Button5_Click_1(sender As Object, e As EventArgs) Handles Button5.Click
+        ComboBox1.DataSource = Nothing
+        ComboBox2.DataSource = Nothing
+        ComboBox3.DataSource = Nothing
+        ComboBox4.DataSource = Nothing
+        ComboBox1.Items.Clear()
+        ComboBox2.Items.Clear()
+        ComboBox3.Items.Clear()
+        ComboBox4.Items.Clear()
+        CheckBox13.Checked = False
+        CheckBox14.Checked = True
+        ComboBox3.Enabled = False
+        ComboBox2.Enabled = False
+    End Sub
+
+    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
+        ComboBox3.Text = ""
+        ComboBox3.Enabled = False
+    End Sub
+
+    Private Sub CheckBox13_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox13.CheckedChanged
+        If CheckBox13.Checked = True Then
+            ComboBox3.Enabled = False
+            CheckBox14.Checked = False
+        Else
+            ComboBox3.Enabled = True
+            CheckBox14.Checked = True
+
+        End If
+    End Sub
+
+    Private Sub CheckBox14_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox14.CheckedChanged
+        If CheckBox14.Checked = True Then
+            ComboBox4.Enabled = False
+            CheckBox13.Checked = False
+
+        Else
+            ComboBox4.Enabled = True
+            CheckBox13.Checked = True
+
+        End If
+    End Sub
+
+
+
 #End Region
 
 End Class

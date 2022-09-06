@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Connection
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Connection
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
@@ -130,20 +130,46 @@ Partial Class Connection
         Me.TextBoxBROWNIEPRICE = New System.Windows.Forms.TextBox()
         Me.TextBoxBROWNIEID = New System.Windows.Forms.TextBox()
         Me.TextBoxBATTERID = New System.Windows.Forms.TextBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.TabControl2.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -169,7 +195,9 @@ Partial Class Connection
         Me.GroupBox7.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl2
@@ -177,6 +205,7 @@ Partial Class Connection
         Me.TabControl2.Controls.Add(Me.TabPage11)
         Me.TabControl2.Controls.Add(Me.TabPage1)
         Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl2.Location = New System.Drawing.Point(0, 0)
@@ -1404,10 +1433,6 @@ Partial Class Connection
         Me.TextBoxBATTERID.Size = New System.Drawing.Size(118, 22)
         Me.TextBoxBATTERID.TabIndex = 255
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox7)
@@ -1430,30 +1455,92 @@ Partial Class Connection
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Reset Table"
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 23)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1006, 453)
+        Me.TableLayoutPanel4.TabIndex = 6
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.RichTextBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.ForeColor = System.Drawing.SystemColors.Info
+        Me.RichTextBox1.Location = New System.Drawing.Point(0, 224)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(1000, 179)
+        Me.RichTextBox1.TabIndex = 1
+        Me.RichTextBox1.Text = ""
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.RichTextBox1)
+        Me.Panel1.Controls.Add(Me.CheckBox1)
+        Me.Panel1.Controls.Add(Me.CheckBox5)
+        Me.Panel1.Controls.Add(Me.CheckBox2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.CheckBox3)
+        Me.Panel1.Controls.Add(Me.CheckBox4)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1000, 447)
+        Me.Panel1.TabIndex = 0
+        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(85, 9)
+        Me.CheckBox1.Location = New System.Drawing.Point(144, 47)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(47, 23)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "All"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(647, 47)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(147, 23)
+        Me.CheckBox5.TabIndex = 5
+        Me.CheckBox5.Text = "Audit Trail Table"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(85, 38)
+        Me.CheckBox2.Location = New System.Drawing.Point(197, 47)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(139, 23)
         Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = "E-Journal Table"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button1.Location = New System.Drawing.Point(0, 403)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(1000, 44)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "RESET"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(85, 67)
+        Me.CheckBox3.Location = New System.Drawing.Point(342, 47)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(122, 23)
         Me.CheckBox3.TabIndex = 2
@@ -1463,82 +1550,335 @@ Partial Class Connection
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(85, 96)
+        Me.CheckBox4.Location = New System.Drawing.Point(470, 47)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(171, 23)
         Me.CheckBox4.TabIndex = 3
         Me.CheckBox4.Text = "Reset Counter Table"
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
-        'Button1
+        'TabPage3
         '
-        Me.Button1.Location = New System.Drawing.Point(85, 154)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(171, 31)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "RESET"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TabPage3.Controls.Add(Me.GroupBox12)
+        Me.TabPage3.Controls.Add(Me.TextBox1)
+        Me.TabPage3.Controls.Add(Me.GroupBox9)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 28)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1018, 485)
+        Me.TabPage3.TabIndex = 3
+        Me.TabPage3.Text = "Web Tables"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'GroupBox12
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(85, 125)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(147, 23)
-        Me.CheckBox5.TabIndex = 5
-        Me.CheckBox5.Text = "Audit Trail Table"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.GroupBox12.BackColor = System.Drawing.Color.AliceBlue
+        Me.GroupBox12.Controls.Add(Me.Label16)
+        Me.GroupBox12.Controls.Add(Me.Label13)
+        Me.GroupBox12.Controls.Add(Me.CheckBox14)
+        Me.GroupBox12.Controls.Add(Me.CheckBox13)
+        Me.GroupBox12.Controls.Add(Me.Label8)
+        Me.GroupBox12.Controls.Add(Me.Label6)
+        Me.GroupBox12.Controls.Add(Me.Label7)
+        Me.GroupBox12.Controls.Add(Me.ComboBox4)
+        Me.GroupBox12.Controls.Add(Me.ComboBox3)
+        Me.GroupBox12.Controls.Add(Me.ComboBox2)
+        Me.GroupBox12.Controls.Add(Me.ComboBox1)
+        Me.GroupBox12.Controls.Add(Me.Button6)
+        Me.GroupBox12.Controls.Add(Me.Button5)
+        Me.GroupBox12.Controls.Add(Me.Button4)
+        Me.GroupBox12.Controls.Add(Me.Button3)
+        Me.GroupBox12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox12.Location = New System.Drawing.Point(3, 145)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(1012, 240)
+        Me.GroupBox12.TabIndex = 3
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "Delete in  Web Tables"
         '
-        'TableLayoutPanel4
+        'Label16
         '
-        Me.TableLayoutPanel4.ColumnCount = 3
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel4.Controls.Add(Me.GroupBox8, 2, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Panel1, 1, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 23)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1006, 453)
-        Me.TableLayoutPanel4.TabIndex = 6
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(700, 89)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(105, 16)
+        Me.Label16.TabIndex = 3
+        Me.Label16.Text = "Transaction Date"
         '
-        'Panel1
+        'Label13
         '
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.CheckBox5)
-        Me.Panel1.Controls.Add(Me.CheckBox2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.CheckBox3)
-        Me.Panel1.Controls.Add(Me.CheckBox4)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(338, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(329, 447)
-        Me.Panel1.TabIndex = 0
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(515, 89)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(91, 16)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Transaction ID"
         '
-        'RichTextBox1
+        'CheckBox14
         '
-        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox1.Location = New System.Drawing.Point(3, 23)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(324, 421)
-        Me.RichTextBox1.TabIndex = 1
-        Me.RichTextBox1.Text = ""
+        Me.CheckBox14.AutoSize = True
+        Me.CheckBox14.Checked = True
+        Me.CheckBox14.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox14.Location = New System.Drawing.Point(507, 116)
+        Me.CheckBox14.Name = "CheckBox14"
+        Me.CheckBox14.Size = New System.Drawing.Size(169, 20)
+        Me.CheckBox14.TabIndex = 0
+        Me.CheckBox14.Text = "Disable Transaction Date"
+        Me.CheckBox14.UseVisualStyleBackColor = True
         '
-        'GroupBox8
+        'CheckBox13
         '
-        Me.GroupBox8.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox8.Location = New System.Drawing.Point(673, 3)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(330, 447)
-        Me.GroupBox8.TabIndex = 6
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "RESET LOGS"
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox13.Location = New System.Drawing.Point(339, 116)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(155, 20)
+        Me.CheckBox13.TabIndex = 0
+        Me.CheckBox13.Text = "Disable Transaction ID"
+        Me.CheckBox13.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(403, 89)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 16)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Store ID"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(188, 89)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(77, 16)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Table Name"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(282, 28)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(474, 16)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Delete in Table . . . Where ID = . . .  and TransactionID = . . . and or Date =  " &
+    ". . ."
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.AutoCompleteCustomSource.AddRange(New String() {""})
+        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox4.Enabled = False
+        Me.ComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(628, 59)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(272, 24)
+        Me.ComboBox4.TabIndex = 2
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(494, 59)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(128, 24)
+        Me.ComboBox3.TabIndex = 2
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(360, 59)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(128, 24)
+        Me.ComboBox2.TabIndex = 2
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(90, 59)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(264, 24)
+        Me.ComboBox1.TabIndex = 2
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(495, 191)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(411, 37)
+        Me.Button6.TabIndex = 1
+        Me.Button6.Text = "View Table Data"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(495, 148)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(411, 37)
+        Me.Button5.TabIndex = 1
+        Me.Button5.Text = "Clear Data"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(83, 148)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(411, 37)
+        Me.Button4.TabIndex = 1
+        Me.Button4.Text = "Load Data"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(83, 191)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(411, 37)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "Delete"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.MenuText
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TextBox1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.Info
+        Me.TextBox1.Location = New System.Drawing.Point(3, 385)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(1012, 97)
+        Me.TextBox1.TabIndex = 2
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.Button2)
+        Me.GroupBox9.Controls.Add(Me.CheckBox12)
+        Me.GroupBox9.Controls.Add(Me.CheckBox11)
+        Me.GroupBox9.Controls.Add(Me.CheckBox10)
+        Me.GroupBox9.Controls.Add(Me.CheckBox9)
+        Me.GroupBox9.Controls.Add(Me.CheckBox8)
+        Me.GroupBox9.Controls.Add(Me.CheckBox7)
+        Me.GroupBox9.Controls.Add(Me.CheckBox6)
+        Me.GroupBox9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox9.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(1012, 142)
+        Me.GroupBox9.TabIndex = 1
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Truncate Web Tables"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(83, 85)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(823, 37)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Truncate Table/s"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox12.Location = New System.Drawing.Point(808, 43)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(88, 20)
+        Me.CheckBox12.TabIndex = 0
+        Me.CheckBox12.Text = "Event Logs"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox11.Location = New System.Drawing.Point(672, 43)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(130, 20)
+        Me.CheckBox11.TabIndex = 0
+        Me.CheckBox11.Text = "Branch POS Users"
+        Me.CheckBox11.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox10.Location = New System.Drawing.Point(567, 43)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(99, 20)
+        Me.CheckBox10.TabIndex = 0
+        Me.CheckBox10.Text = "System Logs"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox9.Location = New System.Drawing.Point(471, 43)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(90, 20)
+        Me.CheckBox9.TabIndex = 0
+        Me.CheckBox9.Text = "Serial Keys"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox8.Location = New System.Drawing.Point(305, 43)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(160, 20)
+        Me.CheckBox8.TabIndex = 0
+        Me.CheckBox8.Text = "Outlet Z-read Inventory"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox7.Location = New System.Drawing.Point(181, 43)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(118, 20)
+        Me.CheckBox7.TabIndex = 0
+        Me.CheckBox7.Text = "Outlet Inventory"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox6.Location = New System.Drawing.Point(108, 43)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(67, 20)
+        Me.CheckBox6.TabIndex = 0
+        Me.CheckBox6.Text = "Outlets"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Connection
         '
@@ -1588,7 +1928,12 @@ Partial Class Connection
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        Me.GroupBox12.ResumeLayout(False)
+        Me.GroupBox12.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1713,6 +2058,32 @@ Partial Class Connection
     Friend WithEvents Button1 As Button
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox9 As GroupBox
+    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents GroupBox12 As GroupBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents CheckBox14 As CheckBox
+    Friend WithEvents CheckBox13 As CheckBox
+    Friend WithEvents Button6 As Button
 End Class
